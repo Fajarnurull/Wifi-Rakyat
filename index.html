@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta charset="UTF-8">
   <title>Internet Rakyat — Akses Cepat & Terjangkau</title>
   <meta name="description" content="Internet Rakyat — layanan internet cepat, stabil, dan terjangkau untuk semua warga.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
+  
   <header class="site-header">
     <div class="container header-inner">
       <a href="#hero" class="brand">Wifi<span>Rakyat</span></a>
@@ -21,7 +22,7 @@
       </nav>
       <div class="actions">
         <button class="btn ghost" id="btnLogin">Login</button>
-        <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Daftar</button>
+        <button class="btn primary" id="btnRegister">Daftar</button>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <span></span><span></span><span></span>
         </button>
@@ -29,7 +30,7 @@
     </div>
   </header>
 
-  <!-- Hero -->
+ 
   <section id="hero" class="hero">
     <div class="container hero-grid">
       <div class="hero-text">
@@ -46,7 +47,7 @@
     </div>
   </section>
 
-  <!-- Fitur -->
+
   <section id="features" class="section">
     <div class="container">
       <h2 class="section-title">Fitur Unggulan</h2>
@@ -59,7 +60,7 @@
     </div>
   </section>
 
-  <!-- Paket -->
+  
   <section id="plans" class="section bg-light">
     <div class="container">
       <h2 class="section-title">Pilihan Paket</h2>
@@ -68,25 +69,25 @@
           <h3>Paket Hemat</h3>
           <p><strong>Rp 100.000/bulan</strong></p>
           <p>Kecepatan 10 Mbps</p>
-          <button class="btn primary">Pilih Paket</button>
+          <button class="btn primary" onclick="openRegister()">Pilih Paket</button>
         </article>
         <article class="card">
           <h3>Paket Keluarga</h3>
           <p><strong>Rp 200.000/bulan</strong></p>
           <p>Kecepatan 20 Mbps</p>
-          <button class="btn primary">Pilih Paket</button>
+          <button class="btn primary" onclick="openRegister()">Pilih Paket</button>
         </article>
         <article class="card">
           <h3>Paket Bisnis</h3>
           <p><strong>Rp 400.000/bulan</strong></p>
           <p>Kecepatan 50 Mbps</p>
-          <button class="btn primary">Pilih Paket</button>
+          <button class="btn primary" onclick="openRegister()">Pilih Paket</button>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- Galeri -->
+ 
   <section id="gallery" class="section">
     <div class="container">
       <h2 class="section-title">Galeri</h2>
@@ -99,10 +100,31 @@
     </div>
   </section>
 
-  <!-- Kontak -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">Apa Kata Pelanggan?</h2>
+      <div class="cards testimonials">
+        <article class="card">
+          <p>"Internet Rakyat benar-benar membantu usaha saya. Sinyal stabil, harga pas di kantong."</p>
+          <h4>— Budi, Pengusaha UMKM</h4>
+        </article>
+        <article class="card">
+          <p>"Sekarang belajar online anak-anak jadi lancar. Terima kasih Wifi Rakyat!"</p>
+          <h4>— Siti, Warga Desa</h4>
+        </article>
+        <article class="card">
+          <p>"Teknisi ramah, pemasangan cepat. Recommended banget buat warga desa."</p>
+          <h4>— Agus, Pelanggan Baru</h4>
+        </article>
+      </div>
+    </div>
+  </section>
+ 
   <section id="contact" class="section bg-light">
     <div class="container">
       <h2 class="section-title">Kontak Kami</h2>
+      <p>Hubungi Admin: 📞 <a href="tel:+628816569904">+62 881-6569-904</a> | 💬 
+         <a href="https://wa.me/628816569904" target="_blank">WhatsApp Admin</a></p>
       <form class="contact-form" id="contactForm">
         <input type="text" id="name" placeholder="Nama Lengkap" required>
         <input type="email" id="email" placeholder="Email" required>
@@ -113,31 +135,39 @@
     </div>
   </section>
 
-  <!-- Footer -->
+
   <footer class="site-footer">
-  <div class="container footer-inner">
-    <p class="copyright">
-      © <span id="year"></span> Wifi Rakyat — Dibuat dengan ❤️ untuk masyarakat Punggelan.
-    </p>
-    <nav class="footer-nav">
-      <a href="#features">Fitur</a> |
-      <a href="#plans">Paket</a> |
-      <a href="#contact">Kontak</a>
-    </nav>
-  </div>
-</footer>
+    <div class="container footer-inner">
+      <p class="copyright">
+        © <span id="year"></span> Wifi Rakyat — Dibuat dengan ❤️ untuk masyarakat Punggelan.
+      </p>
+    </div>
+  </footer>
 
-
-  <!-- Modal Login -->
   <div class="modal" id="loginModal">
     <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
+      <span class="close" id="closeLogin">&times;</span>
       <h2>Login</h2>
       <form id="loginForm">
         <input type="text" placeholder="Username" required>
         <input type="password" placeholder="Password" required>
         <button type="submit" class="btn primary">Masuk</button>
       </form>
+    </div>
+  </div>
+
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <span class="close" id="closeRegister">&times;</span>
+      <h2>Daftar Paket Internet</h2>
+      <form id="registerForm">
+        <input type="text" placeholder="Nama Lengkap" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Nomor HP" required>
+        <input type="text" placeholder="Alamat" required>
+        <button type="submit" class="btn primary">Kirim Pendaftaran</button>
+      </form>
+      <p id="registerMsg" class="form-msg"></p>
     </div>
   </div>
 
