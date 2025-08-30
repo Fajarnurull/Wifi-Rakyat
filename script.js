@@ -1,36 +1,48 @@
-// Hamburger menu
+document.getElementById("year").textContent = new Date().getFullYear();
+
+
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("mainNav");
 hamburger.addEventListener("click", () => {
-  nav.classList.toggle("active");
+  nav.classList.toggle("open");
 });
 
-// Year auto update
-document.getElementById("year").textContent = new Date().getFullYear();
 
-// Contact form
-const contactForm = document.getElementById("contactForm");
-const formMsg = document.getElementById("formMsg");
-contactForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  formMsg.textContent = "Pesan berhasil dikirim!";
-  formMsg.style.color = "green";
-  contactForm.reset();
-});
-
-// Modal Login
+const loginModal = document.getElementById("loginModal");
 const btnLogin = document.getElementById("btnLogin");
-const modal = document.getElementById("loginModal");
-const closeModal = document.getElementById("closeModal");
+const closeLogin = document.getElementById("closeLogin");
 
-btnLogin.onclick = () => modal.style.display = "flex";
-closeModal.onclick = () => modal.style.display = "none";
-window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+btnLogin.onclick = () => loginModal.style.display = "block";
+closeLogin.onclick = () => loginModal.style.display = "none";
 
-// Login form
-const loginForm = document.getElementById("loginForm");
-loginForm.addEventListener("submit", (e) => {
+
+const registerModal = document.getElementById("registerModal");
+const btnRegister = document.getElementById("btnRegister");
+const closeRegister = document.getElementById("closeRegister");
+
+btnRegister.onclick = () => registerModal.style.display = "block";
+closeRegister.onclick = () => registerModal.style.display = "none";
+
+function openRegister() {
+  registerModal.style.display = "block";
+}
+
+
+window.onclick = function(e) {
+  if (e.target === loginModal) loginModal.style.display = "none";
+  if (e.target === registerModal) registerModal.style.display = "none";
+};
+
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Login berhasil (simulasi).");
-  modal.style.display = "none";
+  document.getElementById("formMsg").textContent = "Pesan berhasil dikirim!";
+  this.reset();
+});
+
+
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("registerMsg").textContent = "Pendaftaran berhasil dikirim! Admin akan menghubungi Anda.";
+  this.reset();
 });
