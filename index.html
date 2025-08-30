@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <title>Internet Rakyat — Akses Cepat & Terjangkau</title>
+  <meta name="description" content="Internet Rakyat — layanan internet cepat, stabil, dan terjangkau untuk semua warga.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="brand">Wifi<span>Rakyat</span></a>
+      <nav class="nav" id="mainNav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Fitur</a></li>
+          <li><a href="#plans">Paket</a></li>
+          <li><a href="#gallery">Galeri</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
+      <div class="actions">
+        <button class="btn ghost" id="btnLogin">Login</button>
+        <button class="btn primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Daftar</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h1>Internet Cepat & Terjangkau untuk Semua</h1>
+        <p>Akses internet stabil di desa maupun kota. Paket fleksibel, support lokal, pemasangan cepat.</p>
+        <div class="hero-cta">
+          <a href="#plans" class="btn primary">Lihat Paket</a>
+          <a href="#features" class="btn ghost">Pelajari Fitur</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="sample1.jpeg" alt="Orang menggunakan internet">
+      </div>
+    </div>
+  </section>
+
+  <!-- Fitur -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Fitur Unggulan</h2>
+      <div class="cards">
+        <article class="card"><h3>Kecepatan Stabil</h3><p>Streaming tanpa buffering.</p></article>
+        <article class="card"><h3>Harga Terjangkau</h3><p>Paket ekonomis untuk semua.</p></article>
+        <article class="card"><h3>Support Lokal</h3><p>Tim teknisi dekat lokasi.</p></article>
+        <article class="card"><h3>Keamanan & Privasi</h3><p>Enkripsi WPA2/WPA3.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paket -->
+  <section id="plans" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Pilihan Paket</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Paket Hemat</h3>
+          <p><strong>Rp 100.000/bulan</strong></p>
+          <p>Kecepatan 10 Mbps</p>
+          <button class="btn primary">Pilih Paket</button>
+        </article>
+        <article class="card">
+          <h3>Paket Keluarga</h3>
+          <p><strong>Rp 200.000/bulan</strong></p>
+          <p>Kecepatan 20 Mbps</p>
+          <button class="btn primary">Pilih Paket</button>
+        </article>
+        <article class="card">
+          <h3>Paket Bisnis</h3>
+          <p><strong>Rp 400.000/bulan</strong></p>
+          <p>Kecepatan 50 Mbps</p>
+          <button class="btn primary">Pilih Paket</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galeri -->
+  <section id="gallery" class="section">
+    <div class="container">
+      <h2 class="section-title">Galeri</h2>
+      <div class="gallery-grid">
+        <img src="sample2.jpg" alt="Pemasangan internet">
+        <img src="sample3.jpg" alt="Router wifi">
+        <img src="sample4.jpg" alt="Tim teknisi">
+        <img src="sample5.jpg" alt="Tim">
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontak -->
+  <section id="contact" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Kontak Kami</h2>
+      <form class="contact-form" id="contactForm">
+        <input type="text" id="name" placeholder="Nama Lengkap" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <textarea id="message" placeholder="Pesan Anda" required></textarea>
+        <button type="submit" class="btn primary">Kirim</button>
+      </form>
+      <p id="formMsg" class="form-msg"></p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="copyright">
+      © <span id="year"></span> Wifi Rakyat — Dibuat dengan ❤️ untuk masyarakat Punggelan.
+    </p>
+    <nav class="footer-nav">
+      <a href="#features">Fitur</a> |
+      <a href="#plans">Paket</a> |
+      <a href="#contact">Kontak</a>
+    </nav>
+  </div>
+</footer>
+
+
+  <!-- Modal Login -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" placeholder="Username" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit" class="btn primary">Masuk</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
